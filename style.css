@@ -1,0 +1,213 @@
+/* Cores */
+:root {
+  --fundo: #000;
+  --fundo-tabu: #f9f9f9;
+  --cor-f: #ba9872;
+  --cor-s: #967b5c;
+  --cor-t: #a38564;
+  --cor-fo: #f9f9f9;
+  --cor-fi: #e2e2e2;
+}
+
+/* Estilos gerais */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  background-color: var(--fundo);
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-height: 500px) {
+  body {
+    margin: 25% 0;
+  }
+}
+
+/* Estilos */
+.envelop {
+  width: 15rem;
+  height: 10rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+@media (min-width: 400px) and (max-width: 600px) {
+  .envelop {
+    width: 20rem;
+    height: 15rem;
+  }
+}
+
+@media (min-width: 600px) {
+  .envelop {
+    width: 25rem;
+    height: 20rem;
+  }
+}
+
+@media (min-width: 600px) and (min-height: 600px) {
+  .envelop {
+    bottom: 20%;
+  }
+}
+
+.envelop__frente-papel,
+.envelop__costas-papel,
+.envelop__cima-papel,
+.envelop__conteudo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+.envelop__frente-papel {
+  border-radius: 0.7rem;
+  border: 0.35rem solid var(--cor-s);
+  background-color: var(--cor-f);
+  clip-path: polygon(100% 0%, 50% 70%, 0% 0%, 0% 100%, 100% 100%);
+  z-index: 300;
+}
+
+.envelop__costas-papel {
+  border-radius: 0.7rem;
+  background-color: var(--cor-s);
+  clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 0% 90%);
+  z-index: 100;
+}
+
+.envelop__cima-papel {
+  border-radius: 0.7rem;
+  background-color: var(--cor-s);
+  z-index: 400;
+  clip-path: polygon(0% 0%, 100% 0%, 50% 81%);
+}
+
+.envelop__adesivo,
+.envelop__falso-adesivo {
+  width: 100%;
+  height: 20%;
+  position: absolute;
+  margin: auto;
+  top: 30%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 400;
+  background-image: url("https://www.freepnglogos.com/uploads/heart-png/emoji-heart-33.png");
+  background-color: var(--cor-fo);
+  border: 0.3rem solid var(--cor-fi);
+  background-size: 2rem;
+  background-position: center;
+}
+
+@media (max-width: 400px) {
+  .envelop__adesivo,
+  .envelop__falso-adesivo {
+    background-size: 1.2rem;
+  }
+}
+
+@media (min-width: 600px) {
+  .envelop__adesivo {
+    height: 15%;
+  }
+}
+
+.envelop__falso-adesivo {
+  width: 20%;
+  height: 20%;
+  top: 30%;
+  left: 80%;
+  z-index: 300;
+}
+
+.envelop__conteudo {
+  z-index: 200;
+}
+
+.notas-amor {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nota {
+  width: 95%;
+  height: 30%;
+  background-color: var(--fundo-tabu);
+  position: absolute;
+  overflow: hidden;
+  transition: height 0.5s, opacity 0.25s;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.nota:nth-child(1) {
+  bottom:  60%;
+}
+
+.nota:nth-child(2) {
+  bottom: 40%;
+}
+
+.nota:nth-child(3) {
+  bottom: 20%;
+}
+
+.nota:hover {
+  cursor: pointer;
+  height: 45%;
+}
+
+.nota__texto {
+  font-family: "Sofia";
+  padding: 1rem;
+}
+
+.nota__texto p {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+@media (min-width: 300px) and (max-width: 600px) {
+  .nota__texto p {
+    font-size: 1.025rem;
+  }
+}
+
+@media (min-width: 600px) {
+  .nota__texto p {
+    font-size: 1.15rem;
+  }
+}
+
+.cisores {
+  cursor: url("https://i.postimg.cc/GtLCdKxR/sisors.png"), pointer;
+}
+
+.cisores:active {
+  cursor: url("https://i.postimg.cc/GtXQ7WPZ/pngwing-com.png"), pointer;
+}
+
+.cursor {
+  cursor: pointer;
+}
